@@ -1,0 +1,1485 @@
+{
+  "info": {
+    "_postman_id": "80d57959-0ca2-422f-92cb-7ac25ce05dbe",
+    "name": "Ambev.DeveloperEvaluation.WebApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2906267",
+    "_collection_link": "https://go.postman.co/collection/2906267-80d57959-0ca2-422f-92cb-7ac25ce05dbe?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "/api/Auth",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/Auth",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "Auth"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Auth",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Auth"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"token\": \"string\",\n    \"email\": \"string\",\n    \"name\": \"string\",\n    \"role\": \"string\"\n  }\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Auth",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Auth"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                },
+                {
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Auth",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Auth"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sales",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "items",
+                  "item": [
+                    {
+                      "name": "{itemId}",
+                      "item": [
+                        {
+                          "name": "/api/Sales/:id/items/:itemId",
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/Sales/:id/items/:itemId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "Sales",
+                                ":id",
+                                "items",
+                                ":itemId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                },
+                                {
+                                  "key": "itemId",
+                                  "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "text/plain"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/Sales/:id/items/:itemId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "Sales",
+                                    ":id",
+                                    "items",
+                                    ":itemId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                    },
+                                    {
+                                      "key": "itemId",
+                                      "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"success\": true,\n    \"message\": \"string\",\n    \"updatedTotalAmount\": 4054.2531500290356\n  }\n}"
+                            },
+                            {
+                              "name": "Not Found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "text/plain"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/Sales/:id/items/:itemId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "Sales",
+                                    ":id",
+                                    "items",
+                                    ":itemId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                    },
+                                    {
+                                      "key": "itemId",
+                                      "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/Sales/:id",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"3d6b23a4-09dd-2720-e50b-611b044d196e\",\n    \"saleNumber\": \"string\",\n    \"date\": \"1981-01-26T10:17:25.317Z\",\n    \"customerId\": 5932,\n    \"customerName\": \"string\",\n    \"branch\": \"string\",\n    \"totalAmount\": 3857.052507692762,\n    \"cancelled\": true,\n    \"items\": [\n      {\n        \"id\": \"b1f8e540-fe65-2370-78ac-a8eed4a57481\",\n        \"productId\": 4932,\n        \"productName\": \"string\",\n        \"quantity\": 1240,\n        \"unitPrice\": 8788.801219187435,\n        \"discount\": 5508.828319558087,\n        \"totalItemAmount\": 7465.732161205448,\n        \"cancelled\": false\n      },\n      {\n        \"id\": \"50afce47-e4a0-2daf-e86a-92f939bb68b8\",\n        \"productId\": 7697,\n        \"productName\": \"string\",\n        \"quantity\": 2400,\n        \"unitPrice\": 6058.42495668663,\n        \"discount\": 8253.264592709298,\n        \"totalItemAmount\": 3009.0895247599183,\n        \"cancelled\": true\n      }\n    ]\n  }\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/Sales/:id",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"e7ccf5fa-a74e-c361-5adc-497e371a99b3\",\n    \"saleNumber\": \"string\",\n    \"date\": \"2014-01-12T12:29:18.196Z\",\n    \"customerId\": 9079,\n    \"customerName\": \"string\",\n    \"branch\": \"string\",\n    \"totalAmount\": 4207.413940440826,\n    \"items\": [\n      {\n        \"id\": \"a3775c26-fd8d-7d3a-7bea-5f27992d76ef\",\n        \"productId\": 8839,\n        \"productName\": \"string\",\n        \"quantity\": 7489,\n        \"unitPrice\": 9059.378463098028,\n        \"discount\": 440.44115831598396,\n        \"totalItemAmount\": 2509.4196024930247\n      },\n      {\n        \"id\": \"9f3801c6-1135-d231-1841-7fb7ddf282a0\",\n        \"productId\": 5031,\n        \"productName\": \"string\",\n        \"quantity\": 5856,\n        \"unitPrice\": 2028.9108970226644,\n        \"discount\": 9568.450857401087,\n        \"totalItemAmount\": 283.781043495257\n      }\n    ]\n  }\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/Sales/:id",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Sales/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Sales",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "/api/Sales",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/Sales",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "Sales"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"e7ccf5fa-a74e-c361-5adc-497e371a99b3\",\n    \"saleNumber\": \"string\",\n    \"date\": \"2014-01-12T12:29:18.196Z\",\n    \"customerId\": 9079,\n    \"customerName\": \"string\",\n    \"branch\": \"string\",\n    \"totalAmount\": 4207.413940440826,\n    \"items\": [\n      {\n        \"id\": \"a3775c26-fd8d-7d3a-7bea-5f27992d76ef\",\n        \"productId\": 8839,\n        \"productName\": \"string\",\n        \"quantity\": 7489,\n        \"unitPrice\": 9059.378463098028,\n        \"discount\": 440.44115831598396,\n        \"totalItemAmount\": 2509.4196024930247\n      },\n      {\n        \"id\": \"9f3801c6-1135-d231-1841-7fb7ddf282a0\",\n        \"productId\": 5031,\n        \"productName\": \"string\",\n        \"quantity\": 5856,\n        \"unitPrice\": 2028.9108970226644,\n        \"discount\": 9568.450857401087,\n        \"totalItemAmount\": 283.781043495257\n      }\n    ]\n  }\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"customerId\": 9885,\n  \"customerName\": \"string\",\n  \"branch\": \"string\",\n  \"date\": \"1967-01-19T22:24:17.745Z\",\n  \"items\": [\n    {\n      \"productId\": 5574,\n      \"productName\": \"string\",\n      \"quantity\": 6782,\n      \"unitPrice\": 6788.469647852079\n    },\n    {\n      \"productId\": 2283,\n      \"productName\": \"string\",\n      \"quantity\": 6560,\n      \"unitPrice\": 6168.110677291857\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "/api/Sales",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/Sales?_page=1&_size=10&_order=string&branch=string&customerId=2952&_minDate=2000-01-12T06:36:42.701Z&_maxDate=2000-01-12T06:36:42.701Z&cancelled=true",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "Sales"
+                  ],
+                  "query": [
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "_order",
+                      "value": "string"
+                    },
+                    {
+                      "key": "branch",
+                      "value": "string"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "2952"
+                    },
+                    {
+                      "key": "_minDate",
+                      "value": "2000-01-12T06:36:42.701Z"
+                    },
+                    {
+                      "key": "_maxDate",
+                      "value": "2000-01-12T06:36:42.701Z"
+                    },
+                    {
+                      "key": "cancelled",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Sales?_page=1&_size=10&_order=string&branch=string&customerId=2952&_minDate=2000-01-12T06:36:42.701Z&_maxDate=2000-01-12T06:36:42.701Z&cancelled=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Sales"
+                      ],
+                      "query": [
+                        {
+                          "key": "_page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "_size",
+                          "value": "10"
+                        },
+                        {
+                          "key": "_order",
+                          "value": "string"
+                        },
+                        {
+                          "key": "branch",
+                          "value": "string"
+                        },
+                        {
+                          "key": "customerId",
+                          "value": "2952"
+                        },
+                        {
+                          "key": "_minDate",
+                          "value": "2000-01-12T06:36:42.701Z"
+                        },
+                        {
+                          "key": "_maxDate",
+                          "value": "2000-01-12T06:36:42.701Z"
+                        },
+                        {
+                          "key": "cancelled",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"sales\": [\n      {\n        \"id\": \"daf67a50-2eaf-8e96-1b43-a05b90f6525f\",\n        \"saleNumber\": \"string\",\n        \"date\": \"1972-11-20T14:10:37.878Z\",\n        \"customerId\": 1672,\n        \"customerName\": \"string\",\n        \"branch\": \"string\",\n        \"totalAmount\": 6822.723983812387,\n        \"cancelled\": false,\n        \"itemCount\": 6298\n      },\n      {\n        \"id\": \"23193f6d-d6bc-3811-9823-84e97c1166b1\",\n        \"saleNumber\": \"string\",\n        \"date\": \"2014-10-28T06:05:05.451Z\",\n        \"customerId\": 5705,\n        \"customerName\": \"string\",\n        \"branch\": \"string\",\n        \"totalAmount\": 5219.76082152528,\n        \"cancelled\": true,\n        \"itemCount\": 6494\n      }\n    ],\n    \"totalItems\": 5400,\n    \"currentPage\": 8077,\n    \"totalPages\": 2225\n  }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Users",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "/api/Users/:id",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"6e3a9006-f7b6-2711-d7be-f893a17e2ea2\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"phone\": \"string\",\n    \"role\": 0,\n    \"status\": 0\n  }\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/Users/:id",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/Users/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "Users",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "0fe339f2-eb19-36df-7f67-3f43cb645e35"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "/api/Users",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"phone\": \"string\",\n  \"email\": \"string\",\n  \"status\": 2,\n  \"role\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/Users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "Users"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"phone\": \"string\",\n  \"email\": \"string\",\n  \"status\": 2,\n  \"role\": 2\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Users",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Users"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"6e3a9006-f7b6-2711-d7be-f893a17e2ea2\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"phone\": \"string\",\n    \"role\": 0,\n    \"status\": 0\n  }\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"phone\": \"string\",\n  \"email\": \"string\",\n  \"status\": 2,\n  \"role\": 2\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/Users",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "Users"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"errors\": [\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    },\n    {\n      \"error\": \"string\",\n      \"detail\": \"string\"\n    }\n  ]\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

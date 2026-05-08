@@ -118,7 +118,7 @@ O módulo de Sales foi implementado seguindo os padrões DDD (Domain-Driven Desi
 ```json
 {
   "success": true,
-  "message": "Sale created successfully",
+  "message": "",
   "data": {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "saleNumber": "A1B2C3D4E5F6G7H8",
@@ -145,24 +145,27 @@ O módulo de Sales foi implementado seguindo os padrões DDD (Domain-Driven Desi
 ### 2. **GET** `/api/sales` - Listar Vendas (com paginação e filtros)
 
 **Query Parameters:**
-- `page` (int, default: 1)
-- `size` (int, default: 10)
-- `branch` (string, optional)
-- `customerId` (int, optional)
-- `minDate` (DateTime, optional)
-- `maxDate` (DateTime, optional)
-- `cancelled` (bool, optional)
+- `_page` (int, default: 1)
+- `_size` (int, default: 10)
+- `_order` (string, opcional): Ordenação (ex: "date desc, totalAmount asc")
+- `_branch` (string, opcional)
+- `_customerId` (int, opcional)
+- `_minDate` (DateTime, opcional)
+- `_maxDate` (DateTime, opcional)
+- `_cancelled` (bool, opcional)
 
 **Exemplo:**
 ```
-GET /api/sales?page=1&size=10&branch=Filial%20SP&cancelled=false
+GET /api/sales?_page=1&_size=10&_order=date desc
+GET /api/sales?_branch=Filial São Paulo&_cancelled=false
+GET /api/sales?_minDate=2024-01-01&_maxDate=2024-12-31
 ```
 
 **Response (200 OK):**
 ```json
 {
   "success": true,
-  "message": "Sales retrieved successfully",
+  "message": "",
   "data": {
     "sales": [
       {
@@ -177,7 +180,7 @@ GET /api/sales?page=1&size=10&branch=Filial%20SP&cancelled=false
         "itemCount": 1
       }
     ],
-    "totalCount": 1,
+    "totalItems": 1,
     "currentPage": 1,
     "totalPages": 1
   }
@@ -190,7 +193,7 @@ GET /api/sales?page=1&size=10&branch=Filial%20SP&cancelled=false
 ```json
 {
   "success": true,
-  "message": "Sale retrieved successfully",
+  "message": "",
   "data": {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "saleNumber": "A1B2C3D4E5F6G7H8",
@@ -217,9 +220,11 @@ GET /api/sales?page=1&size=10&branch=Filial%20SP&cancelled=false
 ```json
 {
   "success": true,
-  "message": "Sale cancelled successfully"
+  "message": "",
+  "data": {}
 }
 ```
+> A venda é cancelada logicamente (`cancelled: true`) e pode ser verificada via GET.
 
 ### 6. **PATCH** `/api/sales/{id}/items/{itemId}` - Cancelar Item Específico (DIFERENCIAL)
 
@@ -227,14 +232,15 @@ GET /api/sales?page=1&size=10&branch=Filial%20SP&cancelled=false
 ```json
 {
   "success": true,
-  "message": "Item cancelled successfully",
+  "message": "",
   "data": {
     "success": true,
     "message": "Item cancelled successfully",
-    "updatedTotalAmount": 350.00
+    "updatedTotalAmount": 1080.00
   }
 }
 ```
+> O `updatedTotalAmount` reflete o novo total da venda com o item cancelado removido do cálculo.
 
 ## 🎯 Eventos de Domínio (DIFERENCIAL)
 
@@ -269,16 +275,14 @@ Log: "Item cancelled: ItemID={ItemId}, SaleID={SaleId}, Product={ProductName}, Q
 - PostgreSQL (via Docker)
 ```
 
-### 2. Executar via Docker Compose
+### 2. Subir infraestrutura (bancos e cache)
 ```bash
-cd template/backend
-docker-compose up -d
+docker-compose -f template/backend/docker-compose.yml up -d ambev.developerevaluation.database ambev.developerevaluation.nosql ambev.developerevaluation.cache
 ```
 
 ### 3. Executar Migrations
 ```bash
 cd template/backend/src/Ambev.DeveloperEvaluation.WebApi
-dotnet ef migrations add AddSalesModule --project ../Ambev.DeveloperEvaluation.ORM
 dotnet ef database update --project ../Ambev.DeveloperEvaluation.ORM
 ```
 
@@ -288,9 +292,9 @@ cd template/backend/src/Ambev.DeveloperEvaluation.WebApi
 dotnet run
 ```
 
-A API estará disponível em: `https://localhost:5119` ou `http://localhost:7181`
+A API estará disponível em: `https://localhost:7181`
 
-Swagger UI: `https://localhost:5119/swagger`
+Swagger UI: `https://localhost:7181/swagger`
 
 ### 5. Executar Testes
 ```bash
