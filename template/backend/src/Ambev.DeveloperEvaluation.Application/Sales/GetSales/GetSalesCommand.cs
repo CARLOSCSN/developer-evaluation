@@ -41,4 +41,9 @@ public class GetSalesCommand : IRequest<GetSalesResult>
     /// Gets or sets the optional cancelled status filter
     /// </summary>
     public bool? Cancelled { get; set; }
+
+    /// <summary>
+    /// Gets or sets the optional order clause (e.g., "date desc, saleNumber asc")
+    /// </summary>
+    public string? Order { get; set; }
 }

@@ -39,6 +39,7 @@ public class GetSalesHandler : IRequestHandler<GetSalesCommand, GetSalesResult>
             command.MinDate,
             command.MaxDate,
             command.Cancelled,
+            command.Order,
             cancellationToken);
 
         var totalPages = (int)Math.Ceiling(totalCount / (double)command.Size);
@@ -46,7 +47,7 @@ public class GetSalesHandler : IRequestHandler<GetSalesCommand, GetSalesResult>
         return new GetSalesResult
         {
             Sales = _mapper.Map<List<SaleDto>>(sales),
-            TotalCount = totalCount,
+            TotalItems = totalCount,
             CurrentPage = command.Page,
             TotalPages = totalPages
         };

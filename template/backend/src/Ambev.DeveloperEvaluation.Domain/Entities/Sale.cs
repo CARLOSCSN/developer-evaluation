@@ -74,7 +74,7 @@ public class Sale : BaseEntity
     /// </summary>
     public void CalculateTotalAmount()
     {
-        TotalAmount = Items.Sum(item => item.TotalItemAmount);
+        TotalAmount = Items.Where(i => !i.Cancelled).Sum(item => item.TotalItemAmount);
     }
 
     /// <summary>

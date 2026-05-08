@@ -58,12 +58,7 @@ public class SalesController : BaseController
         var command = _mapper.Map<CreateSaleCommand>(request);
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Created(string.Empty, new ApiResponseWithData<CreateSaleResponse>
-        {
-            Success = true,
-            Message = "Sale created successfully",
-            Data = _mapper.Map<CreateSaleResponse>(response)
-        });
+        return Created(string.Empty, new object(), _mapper.Map<CreateSaleResponse>(response));
     }
 
     /// <summary>
@@ -71,6 +66,7 @@ public class SalesController : BaseController
     /// </summary>
     /// <param name="page">Page number (default: 1)</param>
     /// <param name="size">Page size (default: 10)</param>
+    /// <param name="order">Optional order clause (e.g., "date desc, saleNumber asc")</param>
     /// <param name="branch">Optional branch filter</param>
     /// <param name="customerId">Optional customer ID filter</param>
     /// <param name="minDate">Optional minimum date filter</param>
@@ -81,12 +77,13 @@ public class SalesController : BaseController
     [HttpGet]
     [ProducesResponseType(typeof(ApiResponseWithData<GetSalesResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetSales(
-        [FromQuery] int page = 1,
-        [FromQuery] int size = 10,
+        [FromQuery(Name = "_page")] int page = 1,
+        [FromQuery(Name = "_size")] int size = 10,
+        [FromQuery(Name = "_order")] string? order = null,
         [FromQuery] string? branch = null,
         [FromQuery] int? customerId = null,
-        [FromQuery] DateTime? minDate = null,
-        [FromQuery] DateTime? maxDate = null,
+        [FromQuery(Name = "_minDate")] DateTime? minDate = null,
+        [FromQuery(Name = "_maxDate")] DateTime? maxDate = null,
         [FromQuery] bool? cancelled = null,
         CancellationToken cancellationToken = default)
     {
@@ -94,6 +91,7 @@ public class SalesController : BaseController
         {
             Page = page,
             Size = size,
+            Order = order,
             Branch = branch,
             CustomerId = customerId,
             MinDate = minDate,
@@ -103,12 +101,7 @@ public class SalesController : BaseController
 
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new ApiResponseWithData<GetSalesResponse>
-        {
-            Success = true,
-            Message = "Sales retrieved successfully",
-            Data = _mapper.Map<GetSalesResponse>(response)
-        });
+        return Ok(_mapper.Map<GetSalesResponse>(response));
     }
 
     /// <summary>
@@ -125,12 +118,7 @@ public class SalesController : BaseController
         var command = new GetSaleCommand(id);
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new ApiResponseWithData<GetSaleResponse>
-        {
-            Success = true,
-            Message = "Sale retrieved successfully",
-            Data = _mapper.Map<GetSaleResponse>(response)
-        });
+        return Ok(_mapper.Map<GetSaleResponse>(response));
     }
 
     /// <summary>
@@ -156,12 +144,7 @@ public class SalesController : BaseController
         command.Id = id;
         var response = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new ApiResponseWithData<UpdateSaleResponse>
-        {
-            Success = true,
-            Message = "Sale updated successfully",
-            Data = _mapper.Map<UpdateSaleResponse>(response)
-        });
+        return Ok(_mapper.Map<UpdateSaleResponse>(response));
     }
 
     /// <summary>
@@ -176,13 +159,9 @@ public class SalesController : BaseController
     public async Task<IActionResult> DeleteSale([FromRoute] Guid id, CancellationToken cancellationToken)
     {
         var command = new DeleteSaleCommand(id);
-        var response = await _mediator.Send(command, cancellationToken);
+        await _mediator.Send(command, cancellationToken);
 
-        return Ok(new ApiResponse
-        {
-            Success = response.Success,
-            Message = response.Message
-        });
+        return Ok(new { }); // BaseController.Ok will wrap this
     }
 
     /// <summary>
@@ -198,18 +177,13 @@ public class SalesController : BaseController
     public async Task<IActionResult> CancelItem([FromRoute] Guid id, [FromRoute] Guid itemId, CancellationToken cancellationToken)
     {
         var command = new CancelItemCommand(id, itemId);
-        var response = await _mediator.Send(command, cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken);
 
-        return Ok(new ApiResponseWithData<CancelItemResponse>
+        return Ok(new CancelItemResponse
         {
-            Success = response.Success,
-            Message = response.Message,
-            Data = new CancelItemResponse
-            {
-                Success = response.Success,
-                Message = response.Message,
-                UpdatedTotalAmount = response.UpdatedTotalAmount
-            }
+            Success = result.Success,
+            Message = result.Message,
+            UpdatedTotalAmount = result.UpdatedTotalAmount
         });
     }
 }

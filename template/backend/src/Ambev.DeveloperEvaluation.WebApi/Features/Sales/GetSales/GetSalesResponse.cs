@@ -13,7 +13,7 @@ public class GetSalesResponse
     /// <summary>
     /// Gets or sets the total count
     /// </summary>
-    public int TotalCount { get; set; }
+    public int TotalItems { get; set; }
 
     /// <summary>
     /// Gets or sets the current page

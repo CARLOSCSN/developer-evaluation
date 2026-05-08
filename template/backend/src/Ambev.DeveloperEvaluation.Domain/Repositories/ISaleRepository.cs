@@ -33,6 +33,7 @@ public interface ISaleRepository
     /// <param name="minDate">Optional minimum date filter</param>
     /// <param name="maxDate">Optional maximum date filter</param>
     /// <param name="cancelled">Optional cancelled status filter</param>
+    /// <param name="order">Optional order clause (e.g., "date desc, saleNumber asc")</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>A tuple containing the list of sales and total count</returns>
     Task<(IEnumerable<Sale> Sales, int TotalCount)> GetAllAsync(
@@ -43,6 +44,7 @@ public interface ISaleRepository
         DateTime? minDate = null,
         DateTime? maxDate = null,
         bool? cancelled = null,
+        string? order = null,
         CancellationToken cancellationToken = default);
 
     /// <summary>
